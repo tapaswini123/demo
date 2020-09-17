@@ -1,0 +1,66 @@
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h3>Angular 6 Reactive Form Validation</h3>
+                <form [formGroup]="queryDetails" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>Testcase Name</label>
+                        <input type="text" formControlName="testCaseName" class="form-control">
+                        
+                    </div>
+                    <div class="form-group">
+                        <label> TestCase Description</label>
+                        <input type="text" formControlName="testCaseDesc" class="form-control" >
+                      
+                    </div>
+                    <div class="form-group">
+                        <label>testcase Type</label>
+                        <ng-multiselect-dropdown id="single-selection-db-type" [data]="dbList" formControlName="testcaseType"
+                            >
+                        </ng-multiselect-dropdown>
+                        
+                        
+                    </div>
+                    <div class="form-group">
+                        <label>Database</label>
+                        <select class=" form-control" id="singleSelection" formControlname="Database"
+                        requierd style="height: 40px;font-size:16px;">
+                        <option value="" [selected]=true [disabled]="true" hidden>--Select Table--</option>
+                        <option *ngFor="let table of dbTypeList" [value]="table">{{table}}
+                         <option>
+                        </select>
+                        
+                        
+                    </div>
+                    <div class="form-group">
+                        <label>Database  Name</label>
+                        <select class=" form-control" id="singleSelection" formControlname="databaseName"
+                        requierd style="height: 40px;font-size:16px;">
+                        <option value="" [selected]=true [disabled]="true" hidden>--Select Table--</option>
+                        <option *ngFor="let table of dbTypeList" [value]="table">{{table}}
+                         <option>
+                        </select>
+                        
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <label>Query Preview: </label>
+                        <textarea formControlName="queryPreview" class="form-control"></textarea>
+
+                       
+                        
+                        
+                    </div>
+                    
+                    <div class="form-group">
+                        <button class="btn btn-primary" >Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
